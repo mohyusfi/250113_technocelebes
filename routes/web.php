@@ -13,6 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/add-portofolio', 'PortofolioController@create')->name('add-portofolio');
+
+    Route::get('/view-portofolio', 'PortofolioController@index')->name('view-portofolio');
+
+    Route::get('/edit-portofolio/{id}', 'PortofolioController@edit')->name('edit-portofolio');
 });
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/service', 'HomeController@service')->name('service');
+Route::get('/about', 'HomeController@about')->name('about');
+Route::get('/article', 'HomeController@article')->name('article');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
