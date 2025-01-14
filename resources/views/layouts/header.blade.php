@@ -11,10 +11,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto d-flex gap-5">
                       <li>
-                        <a href="">Home</a>
+                        <a href="{{ route('home') }}">Home</a>
                       </li>
                       <li>
-                      <a href="../content/aboutus.php">About us</a>
+                      <a href="{{ route('about') }}">About us</a>
                       </li>
                       <li>
                       <a href="">Portofolio</a>

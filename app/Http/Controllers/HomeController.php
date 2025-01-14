@@ -15,11 +15,11 @@ class HomeController extends Controller
     }
 
     public function portofolio() {
-        return view('portofolio');
+        return view('contents/portofolio');
     }
 
     public function about() {
-        return view('about-us');
+        return view('contents/aboutUs');
     }
 
     public function article() {
