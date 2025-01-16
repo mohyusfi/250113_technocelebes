@@ -11,13 +11,8 @@
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h2 class="mb-4">Edit Portofolio</h2>
-        @livewire('porto-edit', [
-            'porto' => $porto
-        ])
-    </div>
 
+    @livewire('article-table')
     <!-- Bootstrap JS -->
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -21,5 +21,8 @@
       </div>
 
       <!-- Submit Button -->
-      <button type="submit" class="btn btn-primary">Submit</button>
+       <div>
+         <button type="submit" class="btn btn-primary">Submit</button>
+          <a class="btn btn-warning" href="{{ Route('view-portofolio') }}">Back</a>
+       </div>
 </form>

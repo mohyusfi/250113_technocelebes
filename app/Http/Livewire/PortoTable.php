@@ -9,10 +9,13 @@ use Illuminate\Support\Facades\Storage;
 class PortoTable extends Component
 {
     public $portofolios; 
+
     public function render()
     {
         $this->portofolios = Portofolio::all();
-        return view('livewire.porto-table', ['portofolios' => $this->portofolios]);
+        return view('livewire.porto-table', [
+            'portofolios' => $this->portofolios
+        ]);
     }
 
     public function delete($id) {

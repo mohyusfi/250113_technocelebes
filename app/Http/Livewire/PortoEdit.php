@@ -15,6 +15,7 @@ class PortoEdit extends Component
     public $content;
     public $id_porto;
     public $previewImage;
+
     public function mount($porto)
     {
         $this->title = $porto->title;
@@ -49,9 +50,9 @@ class PortoEdit extends Component
 
         return redirect()->route('view-portofolio')->with('success', 'portofolio telah diedit');
     }
+    
     public function render()
     {
         return view('livewire.porto-edit');
     }
-
 }

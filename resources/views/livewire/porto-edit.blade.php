@@ -22,4 +22,5 @@
 
       <!-- Submit Button -->
       <button type="submit" class="btn btn-primary">Submit</button>
+      <a class="btn btn-secondary" href="{{ route('view-portofolio') }}">Batal</a>
 </form>
