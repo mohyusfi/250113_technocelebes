@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Article;
+use App\Model\Portofolio;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index() {
+public function index() {
         return view('home');
     }
 
@@ -15,7 +17,11 @@ class HomeController extends Controller
     }
 
     public function portofolio() {
-        return view('contents/portofolio');
+        $portofolio = Portofolio::all();
+        return view('portofolio', [
+            'title' => "potofolio",
+            "data" => $portofolio
+        ]);
     }
 
     public function about() {
@@ -23,6 +29,10 @@ class HomeController extends Controller
     }
 
     public function article() {
-        return view('article');
+        $articles = Article::all();
+        return view('article', [
+            "title" => "Article",
+            "data" => $articles
+        ]);
     }
 }
