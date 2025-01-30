@@ -18,12 +18,12 @@
         <table class="table table-bordered table-hover">
             <thead class="table-dark">
                 <tr>
-                    <th>ID Article</th>
+                    <th>#</th>
                     <th>Title</th>
                     <th>Picture</th>
                     <th>Content</th>
-                    <th>Tags</th>
-                    {{-- <th>Created At</th> --}}
+                    {{-- <th>Tags</th> --}}
+                    <th>Created At</th>
                     <th>Updated At</th>
                     <th>Action</th>
                 </tr>
@@ -37,9 +37,8 @@
                         <td><img src="{{ asset('storage/' . $article->picture) }}" alt="{{ $article->picture }}"
                                 style="max-width: 100px;"></td>
                         <td style="max-width: 200px;">{!! $article->content !!}</td>
-                        <td>{{ $article->tags }}</td>
-                        {{-- <td>{{ $article->created_at }}</td> --}}
-                        <td>{{ $article->updated_at }}</td>
+                        <td>{{ Carbon\Carbon::parse($article->created_at)->diffForHumans() }}</td>
+                        <td>{{ Carbon\Carbon::parse($article->updated_at)->diffForHumans() }}</td>
                         <td>
                             <button class="btn btn-danger"
                                 wire:click="delete({{ $article->id_article }})">delete</button>
