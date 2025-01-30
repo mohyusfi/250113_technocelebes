@@ -1,4 +1,5 @@
-<div class="p-5">
+<div>
+    {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
     <form wire:submit.prevent="create">
         <!-- Title Input -->
         <div class="mb-3">
@@ -19,6 +20,16 @@
                 <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
+
+        <!-- Content Textarea -->
+        {{-- <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <textarea class="form-control" wire:model="content" id="content" name="content" rows="5"
+                placeholder="Enter content"></textarea>
+            @error('content')
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
+        </div> --}}
 
         <div id="toolbar" wire:ignore>
             <!-- Toolbar items: bold, italic, underline, etc. -->
@@ -41,6 +52,7 @@
             <a class="btn btn-warning" href="{{ Route('view-portofolio') }}">Back</a>
         </div>
     </form>
+
 </div>
 
 <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
@@ -61,5 +73,3 @@
         @this.set('content', htmlContent);
     });
 </script>
-
-<!-- Toolbar -->
