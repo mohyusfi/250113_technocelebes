@@ -33,7 +33,7 @@ Route::get('/service', 'HomeController@service')->name('service');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/article', 'HomeController@article')->name('article');
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 

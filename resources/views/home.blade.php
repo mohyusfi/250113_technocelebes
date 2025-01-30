@@ -1,3 +1,6 @@
+@extends('master')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,10 +39,10 @@
         font-weight: bold;
 
     }
-    .navbar {
+    /* .navbar {
         position: absolute;
         top: 0;
-        right: 0; /* Memindahkan navbar ke sisi kanan */
+        right: 0; Memindahkan navbar ke sisi kanan
         padding: 10px;
 }
     .nav-links{
@@ -52,7 +55,7 @@
     }
     .navbar li{
         color:#fff;
-    }
+    } */
 
     header{
         width: 100vw;
@@ -109,7 +112,7 @@
     }
     
 /* css2 */
-    .container {
+    .container1 {
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -123,7 +126,7 @@
     justify-content: center;
 }
 
-    .container h1{
+    .container1 h1{
         position: relative;
         text-transform: uppercase;
         text-align: center;
@@ -131,7 +134,7 @@
         color: #fff;
         margin-bottom: 60px;
     }
-    .container h1 ::after{
+    .container1 h1 ::after{
         content: '';
         position:absolute;
         left:50%;
@@ -140,7 +143,7 @@
         width:100px ;
         height: 5px;
     }
-    .container .row {
+    .container1 .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Posisikan elemen ke tengah */
@@ -150,7 +153,7 @@
     
 }
 
-.container .row .services {
+.container1 .row .services {
     background-color: darkgray;
     padding: 25px 10px;
     text-align: center;
@@ -158,7 +161,7 @@
     border-radius: 5px;
     cursor: pointer;
     width: 20em;
-    height: 10em;
+    height: 15em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -166,47 +169,47 @@
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.container .row .services:hover {
+.container1 .row .services:hover {
     transform: translateY(-10px); /* Elemen akan naik ke atas */
     background-color: #2c3e50; /* Warna berubah */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Efek bayangan */
 }
 
-.container .row .services i {
+.container1 .row .services i {
     font-size: 40px;
     color: #fff;
     transition: color 0.3s ease;
 }
 
-.container .row .services:hover i {
+.container1 .row .services:hover i {
     color: #fc036b; /* Warna ikon berubah */
 }
 
 
-    .container.row .services p{
+    .container1.row .services p{
         margin-top: 20px;
         font-size: 40vh;
     }
-    .container.row.services h2{
+    .container1.row.services h2{
         margin-bottom: 8px;
     }
-    .container .line{
+    .container1 .line{
         margin-top: -40px;
         margin-bottom: 30px;
     }
 </style>
 
-<body>
-    <header>
+<body >
+    <header style="margin-top: -48px;">
         <div class="header-content">
             <h2>We're Willing To Help You Develop Your Business</h2>
             <div class="line"></div>
             <h1>Selamat Datang di CV Techno Celebes</h1>
            <a href="#" class="ctn">About Us</a>
         </div>
-    </header>
+        </header>
     
-    <div class="container">
+    <div class="container1">
         <h1>How We Work To Build App</h1>
         <div class="line"></div>
       
@@ -246,3 +249,4 @@
 
 </body>
 </html>
+@endsection
