@@ -11,7 +11,7 @@ class HomeController extends Controller
     }
 
     public function service() {
-        return view('service');
+        return view('contents/services');
     }
 
     public function portofolio() {
