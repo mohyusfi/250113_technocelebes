@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index() {
+public function index() {
         return view('home');
     }
 
     public function service() {
-        return view('service');
+        return view('contents/services');
     }
 
     public function portofolio() {
@@ -25,7 +25,7 @@ class HomeController extends Controller
     }
 
     public function about() {
-        return view('about-us');
+        return view('contents/aboutUs');
     }
 
     public function article() {
