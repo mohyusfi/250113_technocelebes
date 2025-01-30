@@ -20,4 +20,13 @@ class ArticleController extends Controller
             'title' => 'add article'
         ]);
     }
+
+    public function edit($id)
+    {
+        $article = Article::findOrFail($id);
+        return view('admin.edit-article', [
+            'article' => $article,
+            'title' => 'edit article',
+        ]);
+    }
 }

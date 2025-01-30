@@ -5,16 +5,17 @@ namespace App\Http\Livewire;
 use App\Model\Portofolio;
 use Livewire\Component;
 use Illuminate\Support\Facades\Storage;
+use Livewire\WithPagination;
 
 class PortoTable extends Component
 {
-    public $portofolios; 
+    use WithPagination;
 
     public function render()
     {
-        $this->portofolios = Portofolio::all();
+        // $this->portofolios = Portofolio::all();
         return view('livewire.porto-table', [
-            'portofolios' => $this->portofolios
+            'portofolios' => Portofolio::paginate(4)
         ]);
     }
 
@@ -26,5 +27,11 @@ class PortoTable extends Component
         }
 
         $data_delete->delete();
+        $currentPage = request()->query("page");
+        $dataNow = Portofolio::paginate(4, ["*"], "page", $currentPage);
+        if ($dataNow->isEmpty()) {
+            $redirectPage = $currentPage > 1 ? $currentPage - 1 : 1;
+            return redirect("/view-portofolio?page=$redirectPage");
+        }
     }
 }
