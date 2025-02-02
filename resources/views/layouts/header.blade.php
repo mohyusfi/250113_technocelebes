@@ -59,15 +59,15 @@
     </div>
 </nav>
 <style>
-  a{
+ nav  a{
     position: relative;
     text-decoration: none;
     color: black;
     letter-spacing: 0.5px;
     padding: 0 10px;
   }
-  a:before,
-  a:after{
+  nav a:before,
+  nav a:after{
     content: "";
     position: absolute;
     height: 3px;
@@ -75,16 +75,19 @@
     background-color: blue;
     transition: 0.5s;
   }
-  a:after{
+  li{
+    padding-right: 30px;
+  }
+  nav a:after{
     left: 0;
     bottom: -4px;
   }
-  a:before{
+  nav a:before{
     right: 0;
     top: 0;
   }
-  a:hover:after,
-  a:hover:before{
+  nav a:hover:after,
+  nav a:hover:before{
     width: 100%;
   }
 </style>

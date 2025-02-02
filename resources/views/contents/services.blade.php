@@ -261,6 +261,9 @@
 
 
 <style>
+  .container{
+    padding-bottom: 50px;
+  }
   .animasi{
     animation: fade-in 0.7s;
     animation-delay: 0.1s;
@@ -330,7 +333,7 @@
         padding-left: 20px;
     
     }
-    h3{
+    .block h3{
         color: rgb(212, 0, 255);
         font-family: helvetica;
         font-size: 60px;

@@ -98,6 +98,7 @@
 
 
 <style>
+  
   @keyframes appear {
     from {
       opacity: 0;
@@ -123,7 +124,7 @@
         transition: 0.5s ease;
         cursor: pointer;
       }
-    p:hover{
+    card-body p:hover{
         border: 50vw;
         filter: grayscale(0%);
         background: linear-gradient(to right,rgb(16, 72, 255),rgb(184, 6, 255));
@@ -139,9 +140,6 @@
     }
     .card-body{
         background-color:white;
-    }
-    li{
-        padding-left: 50px;
     }
     body{
         background-color:rgb(219, 242, 255) !important;
