@@ -18,13 +18,6 @@
         @enderror
     </div>
 
-    {{-- <!-- Content Textarea -->
-      <div class="mb-3">
-        <label for="content" class="form-label">Content</label>
-        <textarea class="form-control" wire:model="content" id="content" name="content" rows="5" placeholder="Enter content"></textarea>
-        @error('content')<span class="text-danger">{{ $message }}</span>@enderror 
-      </div> --}}
-
     <div id="toolbar" wire:ignore>
         <!-- Toolbar items: bold, italic, underline, etc. -->
         <button class="ql-bold">B</button>
@@ -53,18 +46,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
-    // Inisialisasi Quill Editor dengan Toolbar
-    // let quill = new Quill('#editor-container', {
-    //     theme: 'snow', // Tema editor
-    //     modules: {
-    //         toolbar: '#toolbar' // Tentukan ID toolbar
-    //     }
-    // });
-    // document.getElementById('save-button').addEventListener('click', () => {
-    //     let htmlContent = quill.root.innerHTML; // Ambil konten sebagai HTML
-    //     @this.set('content', htmlContent);
-    // });
-
     document.addEventListener('livewire:load', () => {
         // Inisialisasi Quill Editor
         let quill = new Quill('#editor-container', {
