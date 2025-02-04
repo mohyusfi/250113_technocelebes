@@ -124,10 +124,10 @@
         transition: 0.5s ease;
         cursor: pointer;
       }
-    card-body p:hover{
+    .card-body p:hover{
         border: 50vw;
         filter: grayscale(0%);
-        background: linear-gradient(to right,rgb(16, 72, 255),rgb(184, 6, 255));
+        background: linear-gradient(to right,rgb(0, 38, 255),rgb(0, 38, 255));
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -136,7 +136,7 @@
       animation: fade-up 0.7s;
      }
     .card-header{
-      background: linear-gradient(to right,rgb(16, 72, 255),rgb(184, 6, 255));
+      background: linear-gradient(to right,rgb(0, 17, 255),rgb(0, 141, 54));
     }
     .card-body{
         background-color:white;
@@ -152,28 +152,29 @@
     .service-box{
       background-color:white;
       align-content: center;
-      box-shadow: 0 0 6px 0 rgb(121, 0, 219);
+      box-shadow: 0 0 6px 0 rgb(0, 26, 255);
       padding: 15px;
       margin-top: 30px;
       position: relative;
       width: 288px;
       height: 145px;
-      transition: 0.5s ease;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
       border-radius: 30px
     }
     .service-box:hover{
       align-content: center;
-      box-shadow: -5px -4px 15px 4px rgb(45, 224, 255);
+      transform: translateY(-10px); /* Elemen akan naik ke atas */
+    color: black;
+    background-color:rgb(255, 255, 255); /* Warna berubah */
+    box-shadow: 0 10px 20px rgba(21, 255, 0, 0.53); /* Efek bayangan */
       padding: 15px;
       margin-top: 30px;
       position: relative;
-      width: 300px;
-      height: 160px;
     }
     h3{
       font-family: helvetica;
       text-align: left;
-      background: linear-gradient(to right,rgb(0, 174, 255),rgb(255, 49, 255));
+      background: linear-gradient(to right,rgb(0, 17, 255),rgb(0, 141, 54));
       -webkit-background-clip: text;
       color: transparent;
     }

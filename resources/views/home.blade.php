@@ -12,6 +12,9 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
     
+    body{
+        background-color: rgb(219, 242, 255);
+    }
     *{
         margin:0;
         padding:0;
@@ -98,26 +101,25 @@
         font-size : 4vmin;
         color: #6666FF
     }
-    .container1 .row{
+    .container .row{
         display:flex;
         align-items: center;
         justify-content: space-between;
-        background : cyan;
+        /* background : cyan; */
         width: 100%;
     }
-    .container1 .row .col {
+    .container .row .col {
         width :80%;
         align-items:center;
         flex-direction: column;
     }
     
 /* css2 */
-    .container1 {
+    .container {
     width: 100%;
     height: 100%;
     min-height: 100vh;
     padding-bottom: 50px ; /* Hapus padding agar background benar-benar penuh */
-    background: #34495e;
     background-size: cover;
     background-position: center;
 
@@ -126,15 +128,15 @@
     justify-content: center;
 }
 
-    .container1 h1{
+    .container h1{
         position: relative;
         text-transform: uppercase;
         text-align: center;
         padding-top: 10%;
-        color: #fff;
+        color: rgb(14, 47, 66);
         margin-bottom: 60px;
     }
-    .container1 h1 ::after{
+    .container h1 ::after{
         content: '';
         position:absolute;
         left:50%;
@@ -143,18 +145,18 @@
         width:100px ;
         height: 5px;
     }
-    .container1 .row {
+    .container .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Posisikan elemen ke tengah */
     align-items: center;
     gap: 20px; /* Beri jarak antar elemen */
-    background:#34495e;
+    /* background:#34495e; */
     
 }
 
-.container1 .row .services {
-    background-color: darkgray;
+.container .row .services {
+    background-color: rgb(0, 71, 151);
     padding: 25px 10px;
     text-align: center;
     position: relative;
@@ -163,37 +165,39 @@
     width: 20em;
     height: 15em;
     display: flex;
+    color: white;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.container1 .row .services:hover {
+.container .row .services:hover {
     transform: translateY(-10px); /* Elemen akan naik ke atas */
-    background-color: #2c3e50; /* Warna berubah */
+    color: black;
+    background-color:rgb(255, 255, 255); /* Warna berubah */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Efek bayangan */
 }
 
-.container1 .row .services i {
+.container .row .services i {
     font-size: 40px;
     color: #fff;
     transition: color 0.3s ease;
 }
 
-.container1 .row .services:hover i {
-    color: #fc036b; /* Warna ikon berubah */
+.container .row .services:hover i {
+    color:rgb(0, 216, 29); /* Warna ikon berubah */
 }
 
 
-    .container1.row .services p{
+    .container.row .services p{
         margin-top: 20px;
         font-size: 40vh;
     }
-    .container1.row.services h2{
+    .container.row.services h2{
         margin-bottom: 8px;
     }
-    .container1 .line{
+    .container .line{
         margin-top: -40px;
         margin-bottom: 30px;
     }
@@ -205,11 +209,11 @@
             <h2>We're Willing To Help You Develop Your Business</h2>
             <div class="line"></div>
             <h1>Selamat Datang di CV Techno Celebes</h1>
-           <a href="#" class="ctn">About Us</a>
+           <a href="{{ route('about') }}" class="ctn">About Us</a>
         </div>
         </header>
     
-    <div class="container1">
+    <div class="container">
         <h1>How We Work To Build App</h1>
         <div class="line"></div>
       
