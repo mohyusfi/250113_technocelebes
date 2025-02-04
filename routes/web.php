@@ -32,9 +32,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/service', 'HomeController@service')->name('service');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/article', 'HomeController@article')->name('article');
+Route::get('/portofolio', 'HomeController@portofolio')->name('portofolio');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
