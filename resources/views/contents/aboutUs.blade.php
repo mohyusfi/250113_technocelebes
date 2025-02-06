@@ -108,119 +108,101 @@
     </div>
 
 
-    <style>
-        @keyframes appear {
-            from {
-                opacity: 0;
-                scale: 0.5;
-            }
-
-            to {
-                opacity: 1;
-                scale: 1;
-            }
-        }
-
-        .block {
-            animation: appear linear;
-            animation-timeline: view();
-            animation-range: entry 0% cover 40%;
-        }
-
-        p {
-            font-size: 25px;
-            font-family: helvetica;
-            font-style: italic;
-            padding-left: 15px;
-            color: rgb(80, 80, 80);
-            filter: grayscale(100%);
-            transition: 0.5s ease;
-            cursor: pointer;
-        }
-
-        p:hover {
-            border: 50vw;
-            filter: grayscale(0%);
-            background: linear-gradient(to right, rgb(16, 72, 255), rgb(184, 6, 255));
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .card {
-            border-color: rgb(121, 0, 219);
-            animation: fade-up 0.7s;
-        }
-
-        .card-header {
-            background: linear-gradient(to right, rgb(16, 72, 255), rgb(184, 6, 255));
-        }
-
-        .card-body {
-            background-color: white;
-        }
-
-        li {
-            padding-left: 50px;
-        }
-
-        body {
-            background-color: rgb(219, 242, 255) !important;
-            color: rgb(0, 102, 255) !important;
-        }
-
-        .services {
-            margin-top: 20px;
-            margin-bottom: 30px;
-        }
-
-        .service-box {
-            background-color: white;
-            align-content: center;
-            box-shadow: 0 0 6px 0 rgb(121, 0, 219);
-            padding: 15px;
-            margin-top: 30px;
-            position: relative;
-            width: 288px;
-            height: 145px;
-            transition: 0.5s ease;
-            border-radius: 30px
-        }
-
-        .service-box:hover {
-            align-content: center;
-            box-shadow: -5px -4px 15px 4px rgb(45, 224, 255);
-            padding: 15px;
-            margin-top: 30px;
-            position: relative;
-            width: 300px;
-            height: 160px;
-        }
-
-        h3 {
-            font-family: helvetica;
-            text-align: left;
-            background: linear-gradient(to right, rgb(0, 174, 255), rgb(255, 49, 255));
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        h5 {
-            animation: fade-up 0.7s;
-            animation-delay: 0.1s;
-            font-family: helvetica;
-        }
-
-        @keyframes fade-up {
-            0% {
-                opacity: 0;
-                transform: translateY(0px) scale(0.9);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0px) scale(1);
-            }
-        }
-    </style>
+<style>
+  
+  @keyframes appear {
+    from {
+      opacity: 0;
+      scale: 0.5;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  .block{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+    p{
+        font-size: 25px;
+        font-family: helvetica;
+        font-style: italic;
+        padding-left: 15px;
+        color: rgb(80, 80, 80);
+        filter: grayscale(100%);
+        transition: 0.5s ease;
+        cursor: pointer;
+      }
+    .card-body p:hover{
+        border: 50vw;
+        filter: grayscale(0%);
+        background: linear-gradient(to right,rgb(0, 38, 255),rgb(0, 38, 255));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .card{
+      border-color:rgb(121, 0, 219);
+      animation: fade-up 0.7s;
+     }
+    .card-header{
+      background: linear-gradient(to right,rgb(0, 17, 255),rgb(0, 141, 54));
+    }
+    .card-body{
+        background-color:white;
+    }
+    body{
+        background-color:rgb(219, 242, 255) !important;
+        color: rgb(0, 102, 255) !important;
+    }
+    .services{
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    .service-box{
+      background-color:white;
+      align-content: center;
+      box-shadow: 0 0 6px 0 rgb(0, 26, 255);
+      padding: 15px;
+      margin-top: 30px;
+      position: relative;
+      width: 288px;
+      height: 145px;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 30px
+    }
+    .service-box:hover{
+      align-content: center;
+      transform: translateY(-10px); /* Elemen akan naik ke atas */
+    color: black;
+    background-color:rgb(255, 255, 255); /* Warna berubah */
+    box-shadow: 0 10px 20px rgba(21, 255, 0, 0.53); /* Efek bayangan */
+      padding: 15px;
+      margin-top: 30px;
+      position: relative;
+    }
+    h3{
+      font-family: helvetica;
+      text-align: left;
+      background: linear-gradient(to right,rgb(0, 17, 255),rgb(0, 141, 54));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    h5{
+      animation: fade-up 0.7s;
+      animation-delay: 0.1s;
+      font-family: helvetica;
+    }
+  @keyframes fade-up{
+    0%{
+      opacity: 0;
+      transform: translateY(0px) scale(0.9);
+    }
+    100%{
+      opacity: 1;
+      transform: translateY(0px) scale(1);
+    }
+  }
+</style>
 @endsection
-

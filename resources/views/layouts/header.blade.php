@@ -24,7 +24,7 @@
           <a class="nav-link active" href="{{ route('about') }}">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="">Portofolio</a>
+          <a class="nav-link active" href="{{ route('portofolio') }}">Portofolio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="{{ route('service') }}">Services</a>
@@ -40,9 +40,6 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a>
-                                    {{ Auth::user()->name }}
-                                </a>
                                  <a class="nav-link active" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
