@@ -8,15 +8,22 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-public function index() {
-        return view('home');
+    public function index()
+    {
+        $articles = Article::with('tags')->get();
+        return view('home', [
+            'title' => 'home',
+            'data' => $articles
+        ]);
     }
 
-    public function service() {
+    public function service()
+    {
         return view('contents.services');
     }
 
-    public function portofolio() {
+    public function portofolio()
+    {
         $portofolio = Portofolio::all();
         return view('contents.portofolio', [
             'title' => "potofolio",
@@ -24,16 +31,17 @@ public function index() {
         ]);
     }
 
-    public function about() {
+    public function about()
+    {
         return view('contents.aboutUs');
     }
 
-    public function article() {
-        $articles = Article::with('tags')->get();
+    public function article($id)
+    {
+        $articles = Article::with('tags')->findOrFail($id);
         return view('contents.article', [
             "title" => "Article",
             "data" => $articles
         ]);
     }
-
 }
