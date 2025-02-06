@@ -24,10 +24,12 @@ class ArticleTable extends Component
             Storage::delete($data_delete->picture);
         }
 
+        $data_delete->tags()->detach();
         $data_delete->delete();
 
         $currentPage = request()->query('page');
-        $dataNow = Article::paginate(4, ['*'], 'page', $currentPage);
+        $dataNow = Article::with('tags')->paginate(4, ['*'], 'page', $currentPage);
+
         if ($dataNow->isEmpty()) {
             $redirectPage = $currentPage > 1 ? $currentPage - 1 : 1;
             return redirect("/view-articles?page=$redirectPage");

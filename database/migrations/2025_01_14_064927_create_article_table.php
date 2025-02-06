@@ -18,7 +18,6 @@ class CreateArticleTable extends Migration
             $table->string('title');
             $table->string('picture');
             $table->text('content');
-            $table->string('tags')->unique();
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateArticleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('article');
+        Schema::dropIfExists('articles');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Model\Article;
+use App\Model\Tag;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -10,18 +11,25 @@ use Livewire\WithFileUploads;
 class EditArticle extends Component
 {
     use WithFileUploads;
+    public $id_article;
     public $title;
     public $picture;
     public $content;
-    public $id_article;
+    public $tags;
     public $previewImage;
 
     public function mount($article): void
     {
+        $tags = [];
+        foreach ($article->tags as $tag) {
+            $tags[] = $tag->name;
+        }
+
+        $this->id_article = $article->id_article;
         $this->title = $article->title;
         $this->previewImage = $article->picture;
         $this->content = $article->content;
-        $this->id_article = $article->id_article;
+        $this->tags = implode(", ", $tags);
     }
 
     public function update()
@@ -29,11 +37,22 @@ class EditArticle extends Component
         $this->validate([
             'title' => 'required|string|max:255',
             'picture' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'content' => 'required|string|max:20000'
+            'content' => 'required|string|max:20000',
+            'tags' => 'required|string'
         ]);
 
-        $data_update = Article::findOrFail($this->id_article);
+        $filterTags = collect(preg_split("/[\s,.]+/", $this->tags));
 
+        $tagIds = $filterTags->map(function($item){
+            $tag = Tag::where("name", "=", $item)->first();
+            if (empty($tag)) {
+                $newTag = Tag::create(["name" => $item]);
+                return $newTag->id;
+            }
+            return $tag->id;
+        });
+
+        $data_update = Article::findOrFail($this->id_article);
 
         if ($this->picture) {
             if ($data_update->picture || Storage::exists($data_update->picture)) {
@@ -48,6 +67,7 @@ class EditArticle extends Component
         $data_update->content = $this->content;
 
         $data_update->update();
+        $data_update->tags()->sync($tagIds);
 
         return redirect()->route('view-articles')->with('success', 'article telah diedit');
     }
