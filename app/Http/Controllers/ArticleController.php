@@ -23,7 +23,7 @@ class ArticleController extends Controller
 
     public function edit($id)
     {
-        $article = Article::findOrFail($id);
+        $article = Article::with('tags')->findOrFail($id);
         return view('admin.edit-article', [
             'article' => $article,
             'title' => 'edit article',

@@ -8,6 +8,14 @@
         @enderror
     </div>
 
+    <div class="mb-3">
+        <label for="tags" class="form-label">Tags</label>
+        <input type="text" class="form-control" id="title" wire:model="tags" name="tags" placeholder="Enter title">
+        @error('tags')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+    </div>
+
     <!-- Picture Input -->
     <div class="mb-3">
         <label for="picture" class="form-label">Picture</label>

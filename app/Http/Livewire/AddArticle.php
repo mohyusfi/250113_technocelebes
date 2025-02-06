@@ -3,6 +3,9 @@
 namespace App\Http\Livewire;
 
 use App\Model\Article;
+use App\Model\Tag;
+use Exception;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -12,6 +15,7 @@ class AddArticle extends Component
     public $title;
     public $content;
     public $picture;
+    public $tags;
     public function render()
     {
         return view('livewire.add-article');
@@ -22,18 +26,34 @@ class AddArticle extends Component
         $this->validate([
             'title' => 'required|string|max:255|',
             'picture' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'content' => 'required|string|max:20000'
+            'content' => 'required|string|max:20000',
+            'tags' => 'required|string'
         ]);
 
-        $filePath = $this->picture->storePublicly('articles', 'public');
+        DB::transaction(function () {
+            $filterTag = collect(preg_split("/[\s,]+/", $this->tags));
 
-        Article::create([
-            'title' => $this->title,
-            'content' => $this->content,
-            'picture' => $filePath,
-            'tags' => uniqid()  
-        ]);
+            $tagIds = $filterTag->map(function ($item) {
+                $tag = Tag::where("name", "=", $item)->first();
+                if (empty($tag)) {
+                    $tags = Tag::create(["name" => $item]);
+                    return $tags->id;
+                }
+                return $tag->id;
+            });
 
-        return redirect()->route('view-articles')->with('success', 'success add article');
+            $filePath = $this->picture->storePublicly('articles', 'public');
+
+            $article = Article::create([
+                'title' => $this->title,
+                'content' => $this->content,
+                'picture' => $filePath,
+            ]);
+
+            if ($article->exists()) {
+                $article->tags()->syncWithoutDetaching($tagIds);
+                return redirect()->route('view-articles')->with('success', 'success add article');
+            }
+        });
     }
 }
