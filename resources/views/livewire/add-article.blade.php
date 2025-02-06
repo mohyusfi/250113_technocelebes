@@ -11,6 +11,15 @@
             @enderror
         </div>
 
+        <div class="mb-3">
+            <label for="tags" class="form-label">Tags</label>
+            <input type="text" class="form-control" id="tags" wire:model="tags" name="tags"
+                placeholder="PHP, Programming, Other">
+            @error('tags')
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
+        </div>
+
         <!-- Picture Input -->
         <div class="mb-3">
             <label for="picture" class="form-label">Picture</label>

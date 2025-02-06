@@ -29,7 +29,7 @@ public function index() {
     }
 
     public function article() {
-        $articles = Article::all();
+        $articles = Article::with('tags')->get();
         return view('contents.article', [
             "title" => "Article",
             "data" => $articles

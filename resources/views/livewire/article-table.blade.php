@@ -22,7 +22,7 @@
                     <th>Title</th>
                     <th>Picture</th>
                     <th>Content</th>
-                    {{-- <th>Tags</th> --}}
+                    <th>Tags</th>
                     <th>Created At</th>
                     <th>Updated At</th>
                     <th>Action</th>
@@ -37,6 +37,11 @@
                         <td><img src="{{ asset('storage/' . $article->picture) }}" alt="{{ $article->picture }}"
                                 style="max-width: 100px;"></td>
                         <td style="max-width: 200px;">{!! $article->content !!}</td>
+                        <td style="max-width: 200px;">
+                            @foreach ($article->tags as $tag)
+                                {{ $tag->name . ', ' }}
+                            @endforeach
+                        </td>
                         <td>{{ Carbon\Carbon::parse($article->created_at)->diffForHumans() }}</td>
                         <td>{{ Carbon\Carbon::parse($article->updated_at)->diffForHumans() }}</td>
                         <td>

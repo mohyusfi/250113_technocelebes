@@ -139,7 +139,6 @@
     .container h1 ::after{
         content: '';
         position:absolute;
-        left:50%;
         bottom:-5px;
         transform: translateX(-50%);
         width:100px ;
@@ -201,6 +200,105 @@
         margin-top: -40px;
         margin-bottom: 30px;
     }
+
+    /* style article */
+    .article{
+        width: 100vw;
+        min-height:115vh;
+        background-image: url('img/bgarticle.jpg') ;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .wrapper{
+        margin-top: 50px;
+        position: relative;
+      }
+      .wrapper .carousel{
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 100%;
+        overflow: hidden;
+        gap: 16px;
+        margin-left: -30px;
+        scroll-behavior: smooth;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: 0;
+      }
+      .carousel::-webkit-scrollbar{
+        display: none;
+      }
+      .carousel.dragging .card{
+        cursor: grab;
+        user-select: none;
+      }
+      .carousel.dragging{
+        scroll-snap-type: none;
+        scroll-behavior: auto;
+      }
+        .carousel .card{
+          margin-top: 20px;
+          scroll-snap-align: center;
+          padding: 20px;
+          border-radius: 30px;
+          color: white;
+          margin-bottom: 30px;
+          min-height: 500px;
+          background-color:rgba(0, 1, 32, 0.76);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          cursor: pointer;
+        }
+        .card img{
+            margin: 20px;
+            width: 350px;
+            height: 300px;
+        }
+        .wrapper i{
+          z-index: 1;
+          height: 50px;
+          width: 50px;
+          color: green;
+          background-color:rgba(255, 255, 255, 0.69);
+          text-align: center;
+          line-height: 45px;
+          border-radius: 50%;
+          top: 50%;
+          cursor: pointer;
+          position: absolute;
+          font-size: 1.25rem;
+          transform: translateY(-50%);
+          box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+        }
+        .wrapper i:first-child{
+          left: -22px;
+        }
+        .wrapper i:last-child{
+          right: -22px;
+        }
+        .card h1{
+            text-align: left;
+            color: white;
+            padding: 0;
+            margin: 0;
+        }
+        .card a{
+            color: blue;
+            background-color: white;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            font-size: 15px;
+            padding: 8px 15px;
+        }
+        .card h5{
+            margin-bottom: 10px;
+        }
+    /* End style article */
 </style>
 
 <body >
@@ -214,7 +312,7 @@
         </header>
     
     <div class="container">
-        <h1>How We Work To Build App</h1>
+        <h1 class="judul">How We Work To Build App</h1>
         <div class="line"></div>
       
         <div class="row">
@@ -249,8 +347,64 @@
                 <p>Lauching will be underway only if the results are satisfactory</p>
             </div>
         </div>
-    </div>
+        </div>
+        <div class="article">
+        <div class="container">
+        <div class="wrapper">
+        <i id="left"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+          </svg>
+        </i>
+        <ul class="carousel">
+        <li class="card">
+            <div class="card-body">
+            <h1>artikel 1</h1>
+            <img src="" alt="" draggable="false">
+            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur libero sint voluptatibus obcaecati tenetur. Et, placeat. Similique molestias consectetur mollitia dolorem fugit ea esse necessitatibus? Voluptates laborum perferendis iste quis.</h5>
+            <a href="{{ route('article') }}">Baca Selengkapnya →</a>    
+        </div>    
+        </li>
+        </ul>
+        <i id="right"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+        </i>
+        </div>
+        </div>
+        </div>
+    <script>
+      const carousel = document.querySelector(".carousel");
+      const arrowBtns = document.querySelectorAll(".wrapper i");
+      const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+      let isDragging = false, startX, startScrollLeft;
 
+      arrowBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          carousel.scrollLeft += btn.id === "left" ? - firstCardWidth : firstCardWidth;
+        });
+      });
+
+      const dragStart = (e) => {
+        isDragging = true;
+        carousel.classList.add("dragging");
+        startX = e.pageX;
+        startScrollLeft = carousel.scrollLeft;
+      }
+
+      const dragging = (e) => {
+        if(!isDragging)return;
+        carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+      }
+
+      const dragStop = () => {
+        isDragging = false;
+        carousel.classList.remove("dragging");
+      }
+
+      carousel.addEventListener("mousedown", dragStart);
+      carousel.addEventListener("mousemove", dragging);
+      document.addEventListener("mouseup", dragStop);
+    </script>
 </body>
 </html>
 @endsection
