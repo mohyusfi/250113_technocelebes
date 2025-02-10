@@ -246,11 +246,9 @@
           border-radius: 30px;
           color: white;
           margin-bottom: 30px;
-          min-height: 500px;
+          min-height: 550px;
           background-color:rgba(0, 1, 32, 0.76);
           display: flex;
-          align-items: center;
-          justify-content: center;
           flex-direction: column;
           cursor: pointer;
         }
@@ -296,7 +294,7 @@
             padding: 8px 15px;
         }
         .card h5{
-            margin-bottom: 10px;
+            padding-bottom: 20px;
         }
     /* End style article */
 </style>
@@ -349,6 +347,7 @@
         </div>
         </div>
         <div class="article">
+        @foreach ($data as $article)
         <div class="container">
         <div class="wrapper">
         <i id="left"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -358,10 +357,10 @@
         <ul class="carousel">
         <li class="card">
             <div class="card-body">
-            <h1>artikel 1</h1>
-            <img src="" alt="" draggable="false">
-            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur libero sint voluptatibus obcaecati tenetur. Et, placeat. Similique molestias consectetur mollitia dolorem fugit ea esse necessitatibus? Voluptates laborum perferendis iste quis.</h5>
-            <a href="{{ route('article') }}">Baca Selengkapnya →</a>    
+            <h1>{{ $article->title }}</h1>
+            <img src="{{ asset('storage/' . $article->picture) }}" alt="" draggable="false">
+            <h5>{!! $article->content !!}</h5>
+            <a href="{{ route('article', ['id' => $article->id_article]) }}">Baca Selengkapnya →</a>    
         </div>    
         </li>
         </ul>
@@ -371,6 +370,7 @@
         </i>
         </div>
         </div>
+        @endforeach
         </div>
     <script>
       const carousel = document.querySelector(".carousel");

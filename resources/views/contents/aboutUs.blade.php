@@ -21,10 +21,10 @@
                                     <path
                                         d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5" />
                                 </svg> Berdiri sejak tahun 2013 dan resmi menjadi CV pada bulan Mei, tahun 2020</p>
-                            <p><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="blue"
+                            <!-- <p><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="blue"
                                     class="bi bi-person-fill" viewBox="0 0 16 16">
                                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                </svg> Didirikan oleh </p>
+                                </svg> Didirikan oleh </p> -->
                             <p><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="red"
                                     class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                                     <path
@@ -154,40 +154,38 @@
     }
     body{
         background-color:rgb(219, 242, 255) !important;
-        color: rgb(0, 102, 255) !important;
+        color: rgb(0, 42, 110) !important;
     }
     .services{
       margin-top: 20px;
       margin-bottom: 30px;
     }
     .service-box{
-      background-color:white;
+      background-color:rgb(0, 6, 88);
       align-content: center;
-      box-shadow: 0 0 6px 0 rgb(0, 26, 255);
+      box-shadow: 0 0 6px 0 rgb(0, 0, 2);
       padding: 15px;
       margin-top: 30px;
       position: relative;
       width: 288px;
       height: 145px;
       transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 30px
+      border-radius: 10px
     }
-    .service-box:hover{
+    /* .service-box:hover{
       align-content: center;
-      transform: translateY(-10px); /* Elemen akan naik ke atas */
-    color: black;
-    background-color:rgb(255, 255, 255); /* Warna berubah */
-    box-shadow: 0 10px 20px rgba(21, 255, 0, 0.53); /* Efek bayangan */
+      transform: translateY(-10px); Elemen akan naik ke atas
+      color: black;
+      background-color:rgb(255, 255, 255); Warna berubah
+      box-shadow: 0 10px 20px rgba(21, 255, 0, 0.53); Efek bayangan
       padding: 15px;
       margin-top: 30px;
       position: relative;
-    }
+    } */
     h3{
       font-family: helvetica;
       text-align: left;
-      background: linear-gradient(to right,rgb(0, 17, 255),rgb(0, 141, 54));
-      -webkit-background-clip: text;
-      color: transparent;
+      color: rgb(255, 255, 255);
     }
     h5{
       animation: fade-up 0.7s;
