@@ -32,12 +32,18 @@ class CustomerMail extends Mailable
      */
     public function build()
     {
-        return $this->from(config('mail.from.address'))
-            ->replyTo($this->userEmail)
-            ->subject('User TC Send Message')
-            ->view('emails.customer')
-            ->with([
-                'message' => $this->userMessage
-            ]);
+        // return $this->from(config('mail.from.address'))
+        //     ->replyTo($this->userEmail)
+        //     ->subject('User TC Send Message')
+        //     ->view('emails.customer')
+        //     ->with([
+        //         'message' => $this->userMessage
+        //     ]);
+        return $this->subject('Sample Email')
+                        ->view('emails.customer')
+                        ->with([
+                            'userEmail' => $this->userEmail,
+                            'userMessage' => $this->userMessage
+                        ]);
     }
 }
