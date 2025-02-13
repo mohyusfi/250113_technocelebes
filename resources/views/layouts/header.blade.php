@@ -37,7 +37,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('service') }}">Services</a>
                     </li>
-                    {{-- @guest
+                    @guest
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route('login') }}">Login</a>
                         </li>
@@ -59,7 +59,7 @@
                             </form>
                 </div>
                 </li>
-            @endguest --}}
+            @endguest
             </ul>
         </div>
     </nav>

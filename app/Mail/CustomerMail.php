@@ -16,11 +16,13 @@ class CustomerMail extends Mailable
      *
      * @return void
      */
+    public $subject;
     public $userMessage;
     public $userEmail;
 
-    public function __construct($message, $userEmail)
+    public function __construct($message, $userEmail, $subject)
     {
+        $this->subject = $subject;
         $this->userMessage = $message;
         $this->userEmail = $userEmail;
     }
@@ -32,14 +34,10 @@ class CustomerMail extends Mailable
      */
     public function build()
     {
-        // return $this->from(config('mail.from.address'))
-        //     ->replyTo($this->userEmail)
-        //     ->subject('User TC Send Message')
-        //     ->view('emails.customer')
-        //     ->with([
-        //         'message' => $this->userMessage
-        //     ]);
-        return $this->subject('Sample Email')
+        return $this->subject($this->subject)
+                        ->from(env('MAIL_FROM_ADDRESS'), env('APP_NAME'))
+                        ->to($this->userEmail, 'someone')
+                        ->replyTo($this->userEmail)
                         ->view('emails.customer')
                         ->with([
                             'userEmail' => $this->userEmail,
