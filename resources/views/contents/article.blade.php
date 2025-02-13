@@ -2,7 +2,7 @@
 
 @section('content')
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="id">
 
     <head>
         <meta charset="UTF-8">
@@ -83,41 +83,12 @@
 
     <body>
         <div class="container">
-            <h1>'Uang adalah Tuhan', Mengapa?</h1>
+        @foreach ($data as $article)
+            <h1>{{ $data->title }}</h1>
             <p>Ditulis oleh Gita Ayu | 6 Januari 2025</p>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>title</th>
-                        <th>picture</th>
-                        <th>content</th>
-                        <th>tags</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($data as $article)
-                        <tr>
-                            <td>{{ $article->title }}</td>
-                            <td>
-                                <img src="{{ asset('storage/' . $article->picture) }}" alt="">
-                            </td>
-                            <td>{!! $article->content !!}</td>
-                            <td>
-                                @foreach ($article->tags->all() as $tag)
-                                    {{ $tag->name." " }}
-                                @endforeach
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla temporibus eligendi rerum accusamus ratione
-                ducimus sed minus quisquam. Atque nostrum eligendi odio cum facilis voluptates minus consequatur,
-                repudiandae maiores placeat.
-                <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse illum, blanditiis officia quisquam
-                pariatur soluta ipsam facilis consequatur, quis enim ab ratione deserunt architecto unde. Quo quas
-                doloremque recusandae iste?
-            </h6>
+            <img src="{{ asset('storage/' . $data->picture) }}" alt="">
+            <h6>{!! $data->content !!}</h6>
+            @endforeach
             <hr>
             <h3>Anda menyukai artikel kami? <br> Subscribe situs web kami sekarang!</h3>
             <div class="card">

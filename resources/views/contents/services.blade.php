@@ -277,7 +277,7 @@
       border-radius: 5px;
     }
     body{
-      background-color:rgb(219, 242, 255);
+      background-color:rgb(67, 104, 146);
     }
     .services{
       margin-top: 20px;
@@ -300,7 +300,7 @@
       transition: 0.5s ease;
       border-radius: 30px;
     }
-    .service-box:hover{
+    /* .service-box:hover{
       align-content: top;
       box-shadow: -5px -4px 15px 4px rgb(45, 224, 255);
       padding: 15px;
@@ -308,7 +308,7 @@
       position: relative;
       width: 352px;
       height: 448px;
-    }
+    } */
     h2{
         padding-top: 10px;
       font-family: helvetica;
