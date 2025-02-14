@@ -41,12 +41,12 @@ class EditArticle extends Component
             'tags' => 'required|string'
         ]);
 
-        $filterTags = collect(preg_split("/[\s,.]+/", $this->tags));
+        $filterTags = collect(preg_split("/[,]+/", $this->tags));
 
         $tagIds = $filterTags->map(function($item){
-            $tag = Tag::where("name", "=", $item)->first();
+            $tag = Tag::where("name", "=", trim($item))->first();
             if (empty($tag)) {
-                $newTag = Tag::create(["name" => $item]);
+                $newTag = Tag::create(["name" => trim(trim($item))]);
                 return $newTag->id;
             }
             return $tag->id;

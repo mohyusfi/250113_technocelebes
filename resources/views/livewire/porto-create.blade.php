@@ -1,4 +1,4 @@
-<div class="p-5">
+<div class="px-5">
     <form wire:submit.prevent="create">
         <!-- Title Input -->
         <div class="mb-3">
