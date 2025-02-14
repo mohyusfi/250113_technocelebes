@@ -29,6 +29,12 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('service') }}">Services</a>
                     </li>
+                    {{-- @auth()
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+                    @endauth --}}
                 </ul>
             </div>
     </nav>

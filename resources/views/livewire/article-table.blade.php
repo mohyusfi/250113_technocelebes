@@ -1,7 +1,7 @@
 <div>
     {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
     {{-- {{ $articles }} --}}
-    <div class="container mt-5">
+    <div class="container mt-2">
         <h1 class="mb-3">Data Articles Table</h1>
         <a class="btn btn-primary my-2 px-4" href="{{ route('view-portofolio') }}">BACK</a>
         <a class="btn btn-primary my-2 px-4" href="{{ route('add-articles') }}">ADD ARTICLE</a>

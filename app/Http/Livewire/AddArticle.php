@@ -6,6 +6,7 @@ use App\Model\Article;
 use App\Model\Tag;
 use Exception;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -31,14 +32,16 @@ class AddArticle extends Component
         ]);
 
         DB::transaction(function () {
-            $filterTag = collect(preg_split("/[\s,]+/", $this->tags));
+            $filterTag = collect(preg_split("/[,]+/", $this->tags));
 
             $tagIds = $filterTag->map(function ($item) {
-                $tag = Tag::where("name", "=", $item)->first();
+                $tag = Tag::where("name", "=", trim($item))->first();
                 if (empty($tag)) {
-                    $tags = Tag::create(["name" => $item]);
+                    Log::info('unavaiable: '.json_encode($tag));
+                    $tags = Tag::create(["name" => trim($item)]);
                     return $tags->id;
                 }
+                Log::info('avaiable: '.json_encode($tag));
                 return $tag->id;
             });
 

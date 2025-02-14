@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-2">
     {{-- {{ $portofolios }} --}}
     <h2 class="mb-4">Data Table Portofolio</h2>
     <a class="btn btn-primary mx-1 my-2 px-4" href="{{ route('add-portofolio') }}">ADD</a>
