@@ -52,22 +52,22 @@
         }
 
         /* .navbar {
-            position: absolute;
-            top: 0;
-            right: 0; Memindahkan navbar ke sisi kanan
-            padding: 10px;
-    }
-        .nav-links{
-            display : flex;
-            align-items: center;
+                                position: absolute;
+                                top: 0;
+                                right: 0; Memindahkan navbar ke sisi kanan
+                                padding: 10px;
+                        }
+                            .nav-links{
+                                display : flex;
+                                align-items: center;
 
-        }
-        .nav-links li{
-            margin: 0 30px;
-        }
-        .navbar li{
-            color:#fff;
-        } */
+                            }
+                            .nav-links li{
+                                margin: 0 30px;
+                            }
+                            .navbar li{
+                                color:#fff;
+                            } */
 
         header {
             width: 100vw;
@@ -417,15 +417,16 @@
                 </div>
             @endforeach
         </div>
-        <div class="email-section d-flex">
-            <div class="col-6 bg-secondary-subtle py-4">
+        <div class="email-section d-flex flex-wrap bg-secondary-subtle py-4">
+            <div class="col-md-6 col-12 bg-secondary-subtle py-4 order-1">
                 <iframe class="col-12 rounded-4"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4080.2224113282336!2d119.87413706090078!3d-0.8929821503786283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d8bedc0398bbf61%3A0x6b38cb63e4e092c!2sTechno%20Celebes!5e0!3m2!1sen!2sid!4v1739459383724!5m2!1sen!2sid"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    width="600" style="border:0; min-height: 400px;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             @livewire('email-send-customer')
         </div>
+
         <script>
             const carousel = document.querySelector(".carousel");
             const arrowBtns = document.querySelectorAll(".wrapper i");

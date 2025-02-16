@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Events\EmailSendSubsriber;
 use App\Listeners\HandleFailedEmail;
+use App\Listeners\HandleMailSendSubsriber;
 use App\Listeners\HandleSentMail;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -29,6 +31,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         JobFailed::class => [
             HandleFailedEmail::class
+        ],
+        EmailSendSubsriber::class => [
+            HandleMailSendSubsriber::class
         ]
     ];
 
