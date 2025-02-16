@@ -1,11 +1,11 @@
-<div class="d-flex align-items-center flex-column col-6 bg-secondary-subtle py-4">
+<div class="d-flex align-items-center flex-column col-12 col-md-6 bg-secondary-subtle py-4">
     @if (session()->get('success'))
         <div class="alert alert-success" role="alert">
             {{ session()->get('success') }}
         </div>
     @endif
-    <h2 class="text-center">Contact Us</h2>
-    <form wire:submit.prevent='send' class="col-6 mt-3">
+    <h2 class="text-center">email us</h2>
+    <form wire:submit.prevent='send' class="col-10 col-sm-6 col-md-10 col-lg-7 mt-3">
         <div>
             <label for="email">Subject</label> <br>
             <input class="form-control" type="text" name="subject" id="subject" wire:model='subject' placeholder="Enter The subject">
