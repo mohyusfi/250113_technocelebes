@@ -389,7 +389,7 @@
         </div>
         <div class="article">
             @foreach ($data as $article)
-                <div class="container">
+                {{-- <div class="container">
                     <div class="wrapper">
                         <i id="left"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                 fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -414,7 +414,7 @@
                             </svg>
                         </i>
                     </div>
-                </div>
+                </div> --}}
             @endforeach
         </div>
         <div class="email-section d-flex flex-wrap bg-secondary-subtle py-4">

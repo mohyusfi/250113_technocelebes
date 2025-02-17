@@ -18,9 +18,11 @@ class SubscribtionMail extends Mailable
      * @return void
      */
     public $article;
-    public function __construct(Article $article)
+    public $subject;
+    public function __construct(Article $article, $subject)
     {
         $this->article = $article;
+        $this->subject = $subject;
     }
 
     /**
@@ -30,8 +32,9 @@ class SubscribtionMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.subsriber', [
-            'article' => $this->article
-        ]);
+        return $this->subject($this->subject)
+            ->view('emails.subsriber', [
+                'article' => $this->article
+            ]);
     }
 }

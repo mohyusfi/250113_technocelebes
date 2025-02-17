@@ -7,6 +7,6 @@
     <title>New Article From Technoselebes</title>
 </head>
 <body>
-    {{ $article->content }}
+    {!! $article->content !!}
 </body>
 </html>

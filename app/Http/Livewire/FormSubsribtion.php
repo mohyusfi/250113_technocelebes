@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Model\Subsription;
+use App\Model\Subscription;
 use Livewire\Component;
 
 class FormSubsribtion extends Component
@@ -11,12 +11,12 @@ class FormSubsribtion extends Component
     public function subscribe()
     {
         $email = $this->validate([
-            "email" => "required|email|string|unique:subsribtion,email"
+            "email" => "required|email|string|unique:subscriptions,email"
         ]);
 
-        Subsription::create(['email' => $this->email]);
+        Subscription::create($email);
 
-        return session()->flash('success', 'anda telah menjadi subriber');
+        return session()->flash('success', 'Berhasil menjadi subriber');
     }
     public function render()
     {
