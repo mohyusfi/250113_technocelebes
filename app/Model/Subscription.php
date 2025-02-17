@@ -4,9 +4,8 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Subsription extends Model
+class Subscription extends Model
 {
-    protected $table = "subsriptions";
-
+    protected $table = "subscriptions";
     protected $fillable = ['email'];
 }
