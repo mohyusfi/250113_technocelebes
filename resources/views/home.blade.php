@@ -392,7 +392,7 @@
         </div>
         <div class="article d-flex gap-4 flex-wrap py-5 justify-content-center">
             @foreach ($data as $article)
-                <div class="card py-2 mx-4 bg-body" style="height: 300px; width: 300px;">
+                <div class="card py-2 mx-4 " style="height: 300px; width: 300px;">
                     <div class="card-header">
                         <h6 class="ms-3">
                             {{ $article->title }}
@@ -401,7 +401,7 @@
                     <div class="card-body p-0 m-0">
 
                         <img src="{{ asset('storage/' . $article->picture) }}" alt=""
-                            style="max-width: 90%; height: 60%;">
+                            style="max-width: 90%; height: 50%;">
                         <a class="ms-3" href="{{ route('article', ['id' => $article->id_article]) }}">Baca Selengkapnya →</a>
                     </div>
                 </div>
