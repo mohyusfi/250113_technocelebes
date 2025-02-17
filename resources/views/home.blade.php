@@ -52,22 +52,22 @@
         }
 
         /* .navbar {
-                                position: absolute;
-                                top: 0;
-                                right: 0; Memindahkan navbar ke sisi kanan
-                                padding: 10px;
-                        }
-                            .nav-links{
-                                display : flex;
-                                align-items: center;
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0; Memindahkan navbar ke sisi kanan
+                                    padding: 10px;
+                            }
+                                .nav-links{
+                                    display : flex;
+                                    align-items: center;
 
-                            }
-                            .nav-links li{
-                                margin: 0 30px;
-                            }
-                            .navbar li{
-                                color:#fff;
-                            } */
+                                }
+                                .nav-links li{
+                                    margin: 0 30px;
+                                }
+                                .navbar li{
+                                    color:#fff;
+                                } */
 
         header {
             width: 100vw;
@@ -233,9 +233,9 @@
             background-image: url('img/bgarticle.jpg');
             background-position: center;
             background-size: cover;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
+            /* display: flex;
+                align-items: flex-end;
+                justify-content: center; */
         }
 
         .wrapper {
@@ -348,11 +348,14 @@
             </div>
         </header>
 
-        <div class="container">
-            <h1 class="judul">How We Work To Build App</h1>
-            <div class="line"></div>
+        <div class="container d-flex flex-column justify-content-center">
+            <div>
+                <h1 class="judul">How We Work To Build App</h1>
+                <div class="line"></div>
 
-            <div class="row">
+            </div>
+
+            <div class="row d-flex justify-content-center w-100">
                 <div class="services">
                     <i class="fa-solid fa-laptop"></i>
                     <h2>Collect requirement</h2>
@@ -387,8 +390,21 @@
                 </div>
             </div>
         </div>
-        <div class="article">
+        <div class="article d-flex gap-4 flex-wrap py-5 justify-content-center">
             @foreach ($data as $article)
+                <div class="card py-2 mx-4 bg-body" style="height: 300px; width: 300px;">
+                    <div class="card-header">
+                        <h6 class="ms-3">
+                            {{ $article->title }}
+                        </h6>
+                    </div>
+                    <div class="card-body p-0 m-0">
+
+                        <img src="{{ asset('storage/' . $article->picture) }}" alt=""
+                            style="max-width: 90%; height: 60%;">
+                        <a class="ms-3" href="{{ route('article', ['id' => $article->id_article]) }}">Baca Selengkapnya →</a>
+                    </div>
+                </div>
                 {{-- <div class="container">
                     <div class="wrapper">
                         <i id="left"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
@@ -427,7 +443,7 @@
             @livewire('email-send-customer')
         </div>
 
-        <script>
+        {{-- <script>
             const carousel = document.querySelector(".carousel");
             const arrowBtns = document.querySelectorAll(".wrapper i");
             const firstCardWidth = carousel.querySelector(".card").offsetWidth;
@@ -460,7 +476,7 @@
             carousel.addEventListener("mousedown", dragStart);
             carousel.addEventListener("mousemove", dragging);
             document.addEventListener("mouseup", dragStop);
-        </script>
+        </script> --}}
     </body>
 
     </html>
