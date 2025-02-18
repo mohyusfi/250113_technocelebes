@@ -2,10 +2,18 @@
 
 namespace App\Providers;
 
+use App\Events\EmailSendSubsriber;
+use App\Listeners\HandleFailedEmail;
+use App\Listeners\HandleMailSendSubsriber;
+use App\Listeners\HandleSentMail;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Mail\Events\MessageSent;
+use Illuminate\Queue\Events\JobFailed;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Queue;
+use Illuminate\Support\Facades\Session;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -18,6 +26,15 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        MessageSent::class =>[
+            HandleSentMail::class
+        ],
+        JobFailed::class => [
+            HandleFailedEmail::class
+        ],
+        EmailSendSubsriber::class => [
+            HandleMailSendSubsriber::class
+        ]
     ];
 
     /**
@@ -28,7 +45,5 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
-
-        //
     }
 }

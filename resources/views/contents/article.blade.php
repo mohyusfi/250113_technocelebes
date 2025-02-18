@@ -81,25 +81,19 @@
     </head>
 
     <body>
+        {{-- @dd($data->tags->all()) --}}
         <div class="container">
-        <div class="d-article">
-        @foreach ($data as $article)
+
             <h1>{{ $data->title }}</h1>
             <p>Ditulis oleh Gita Ayu | 6 Januari 2025</p>
             <img src="{{ asset('storage/' . $data->picture) }}" alt="">
             <h6>{!! $data->content !!}</h6>
-            @endforeach
-            <hr>
-            <h3>Anda menyukai artikel kami? <br> Subscribe situs web kami sekarang!</h3>
-            <div class="card">
-                <div class="card-body">
-                    <form action="">
-                        <label for="email">Masukan Gmail Anda :</label><br>
-                        <input type="email" id="email" name="email" required placeholder="example@gmail.com">
-                        <br><button class="btn btn-danger" type="submit">Subscribe</button>
-                    </form>
+
+            <div>
+                <h3>Anda menyukai artikel kami? <br> Subscribe situs web kami sekarang!</h3>
+                <div class="card">
+                    @livewire('form-subsribtion')
                 </div>
-            </div>
             </div>
         </div>
     </body>

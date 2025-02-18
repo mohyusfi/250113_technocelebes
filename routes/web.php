@@ -16,7 +16,7 @@ use App\Http\Controllers\MailController;
 |
 */
 
-Route::group(['middleware' => 'auth'], function () {
+Route::prefix('admin')->middleware(['auth', 'MustAdmin'])->group( function () {
     Route::get('/add-portofolio', 'PortofolioController@create')->name('add-portofolio');
 
     Route::get('/view-portofolio', 'PortofolioController@index')->name('view-portofolio');
@@ -40,6 +40,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/email', [MailController::class, 'create']);

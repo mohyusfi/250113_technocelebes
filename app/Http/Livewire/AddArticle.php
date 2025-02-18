@@ -2,10 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Jobs\SendEmailSubsriber;
 use App\Model\Article;
+use App\Model\Subscription;
 use App\Model\Tag;
+use Doctrine\Inflector\Rules\Substitution;
 use Exception;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -31,14 +35,16 @@ class AddArticle extends Component
         ]);
 
         DB::transaction(function () {
-            $filterTag = collect(preg_split("/[\s,]+/", $this->tags));
+            $filterTag = collect(preg_split("/[,]+/", $this->tags));
 
             $tagIds = $filterTag->map(function ($item) {
-                $tag = Tag::where("name", "=", $item)->first();
+                $tag = Tag::where("name", "=", trim($item))->first();
                 if (empty($tag)) {
-                    $tags = Tag::create(["name" => $item]);
+                    Log::info('unavaiable: ' . json_encode($tag));
+                    $tags = Tag::create(["name" => trim($item)]);
                     return $tags->id;
                 }
+                Log::info('avaiable: ' . json_encode($tag));
                 return $tag->id;
             });
 
@@ -50,7 +56,18 @@ class AddArticle extends Component
                 'picture' => $filePath,
             ]);
 
+            $subsribers = Subscription::select('email')->get();
+
             if ($article->exists()) {
+
+                foreach ($subsribers->all() as $subsriber) {
+                    dispatch(new SendEmailSubsriber(
+                        $article,
+                        $subsriber->email,
+                        "Article terbaru tentang $article->title"
+                    ));
+                }
+
                 $article->tags()->syncWithoutDetaching($tagIds);
                 return redirect()->route('view-articles')->with('success', 'success add article');
             }

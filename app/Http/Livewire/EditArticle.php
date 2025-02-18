@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use App\Jobs\SendEmailSubsriber;
 use App\Model\Article;
+use App\Model\Subscription;
 use App\Model\Tag;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
@@ -41,12 +43,12 @@ class EditArticle extends Component
             'tags' => 'required|string'
         ]);
 
-        $filterTags = collect(preg_split("/[\s,.]+/", $this->tags));
+        $filterTags = collect(preg_split("/[,]+/", $this->tags));
 
         $tagIds = $filterTags->map(function($item){
-            $tag = Tag::where("name", "=", $item)->first();
+            $tag = Tag::where("name", "=", trim($item))->first();
             if (empty($tag)) {
-                $newTag = Tag::create(["name" => $item]);
+                $newTag = Tag::create(["name" => trim(trim($item))]);
                 return $newTag->id;
             }
             return $tag->id;
@@ -68,6 +70,12 @@ class EditArticle extends Component
 
         $data_update->update();
         $data_update->tags()->sync($tagIds);
+
+        $subribers = Subscription::select('email')->get();
+
+        foreach ($subribers as $subriber) {
+            dispatch(new SendEmailSubsriber($data_update, $subriber->email, "terdapat update di article $data_update->title"));
+        }
 
         return redirect()->route('view-articles')->with('success', 'article telah diedit');
     }

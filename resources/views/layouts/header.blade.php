@@ -30,31 +30,14 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('service') }}">Services</a>
                     </li>
-                    <!-- {{-- @guest
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('login') }}">Login</a>
-                        </li>
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link active" href="{{ route('register') }}">Register</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                </div>
-                </li>
-            @endguest --}} -->
-            </ul>
-        </div>
+                    {{-- @auth()
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+                    @endauth --}}
+                </ul>
+            </div>
     </nav>
     <style>
         nav a {
