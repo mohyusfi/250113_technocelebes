@@ -326,7 +326,7 @@
         padding-left: 23px;
         padding-right: 23px;
     }
-    p{
+    .block p{
         text-align: left;
         color:  rgb(44, 79, 177);
         font-family: helvetica;

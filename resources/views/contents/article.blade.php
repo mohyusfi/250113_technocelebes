@@ -16,20 +16,21 @@
 
             .container {
                 background-color: white;
-                padding: 30px;
+                padding: 50px;
+                margin-top: -48px;
             }
 
-            h1 {
+            .d-article h1 {
                 text-align: center;
             }
 
-            p {
+            .d-article p {
                 text-align: center;
                 font-size: 12px;
                 color: gray;
             }
 
-            img {
+            .d-article img {
                 display: flex;
                 min-height: 300px;
                 max-height: 500px;
@@ -38,7 +39,7 @@
                 justify-self: center;
             }
 
-            h6 {
+            .d-article h6 {
                 margin-left: 30px;
                 margin-right: 30px;
                 padding-bottom: 50px;
@@ -46,7 +47,6 @@
 
             .card {
                 padding: 20px;
-                margin-left: 40px;
                 color: black;
                 width: 300px;
                 align-items: center;
@@ -56,9 +56,8 @@
                 border: none;
             }
 
-            h3 {
+            .d-article h3 {
                 padding-bottom: 20px;
-                padding-left: 30px;
             }
 
             label {
@@ -73,7 +72,7 @@
                 padding: 8px 15px;
             }
 
-            button {
+            .d-article button {
                 margin-top: 20px;
                 width: 200px;
 
@@ -83,6 +82,7 @@
 
     <body>
         <div class="container">
+        <div class="d-article">
         @foreach ($data as $article)
             <h1>{{ $data->title }}</h1>
             <p>Ditulis oleh Gita Ayu | 6 Januari 2025</p>
@@ -99,6 +99,7 @@
                         <br><button class="btn btn-danger" type="submit">Subscribe</button>
                     </form>
                 </div>
+            </div>
             </div>
         </div>
     </body>

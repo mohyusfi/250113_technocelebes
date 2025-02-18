@@ -38,7 +38,7 @@
         <h5>CV Techno Celebes memiliki sumber daya manusia yang kompeten di bidang teknologi informasi. Terdapat berbagai
             bidang yang ada di CV Techno Celebes antara lain :</h5>
         <div class="service">
-            <div class="row">
+            <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-4">
                     <div class="block">
                         <div class="service-box">
@@ -125,7 +125,7 @@
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
   }
-    p{
+    .card p{
         font-size: 25px;
         font-family: helvetica;
         font-style: italic;

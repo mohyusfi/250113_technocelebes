@@ -101,21 +101,21 @@
         font-size : 4vmin;
         color: #6666FF
     }
-    .container .row{
+    .home .container .row{
         display:flex;
         align-items: center;
         justify-content: space-between;
         /* background : cyan; */
         width: 100%;
     }
-    .container .row .col {
+    .home .container .row .col {
         width :80%;
         align-items:center;
         flex-direction: column;
     }
     
 /* css2 */
-    .container {
+    .home .container {
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -144,7 +144,7 @@
         width:100px ;
         height: 5px;
     }
-    .container .row {
+    .home .container .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Posisikan elemen ke tengah */
@@ -171,7 +171,7 @@
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.container .row .services:hover {
+ .container .row .services:hover {
     transform: translateY(-10px); /* Elemen akan naik ke atas */
     color: black;
     background-color:rgb(255, 255, 255); /* Warna berubah */
@@ -252,11 +252,12 @@
           flex-direction: column;
           cursor: pointer;
         }
-        .card img{
-            margin: 20px;
-            width: 350px;
-            height: 300px;
-        }
+        .card img {
+                width: 300px;
+                height: 235px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
         .wrapper i{
           z-index: 1;
           height: 50px;
@@ -308,7 +309,7 @@
            <a href="{{ route('about') }}" class="ctn">About Us</a>
         </div>
         </header>
-    
+    <div class="home">
     <div class="container">
         <h1 class="judul">How We Work To Build App</h1>
         <div class="line"></div>
@@ -346,8 +347,8 @@
             </div>
         </div>
         </div>
+        </div>
         <div class="article">
-        @foreach ($data as $article)
         <div class="container">
         <div class="wrapper">
         <i id="left"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -355,6 +356,7 @@
           </svg>
         </i>
         <ul class="carousel">
+        @foreach ($data as $article)
         <li class="card">
             <div class="card-body">
             <h1>{{ $article->title }}</h1>
@@ -363,6 +365,7 @@
             <a href="{{ route('article', ['id' => $article->id_article]) }}">Baca Selengkapnya →</a>    
         </div>    
         </li>
+        @endforeach
         </ul>
         <i id="right"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
@@ -370,10 +373,6 @@
         </i>
         </div>
         </div>
-        @endforeach
-        </div>
-        <div class="email-section">
-            @livewire('email-send-customer')
         </div>
     <script>
       const carousel = document.querySelector(".carousel");
