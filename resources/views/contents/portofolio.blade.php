@@ -86,6 +86,13 @@
                 background-position: center;
                 background-size: cover;
             }
+            html,
+            body {
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+             }
+
 
             .wrapper {
                 min-height: 575px;

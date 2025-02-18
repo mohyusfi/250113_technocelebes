@@ -156,6 +156,13 @@
         background-color:rgb(219, 242, 255) !important;
         color: rgb(0, 42, 110) !important;
     }
+    html,
+    body {
+         height: 100%;
+         overflow-x: hidden;
+         overflow-y: auto;
+     }
+
     .services{
       margin-top: 20px;
       margin-bottom: 30px;
