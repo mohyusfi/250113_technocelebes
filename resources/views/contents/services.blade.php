@@ -268,6 +268,13 @@
     animation: fade-in 0.7s;
     animation-delay: 0.1s;
   }
+  html,
+        body {
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
     h1{
       animation: fade-in 0.8s;
       font-family: helvetica;
