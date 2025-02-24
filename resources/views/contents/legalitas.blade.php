@@ -1,4 +1,8 @@
-<div class="container py-5">
+@extends('master')
+
+@section('content')
+
+    <div class="container py-5" style="background-color: white; margin-top: -48px;">
         <div class="form-group">
             <div class="row">
                 <div class="col-lg-6 col-12">
@@ -98,6 +102,7 @@
             padding-bottom: 10px;
         }
         .row{
+            padding-left: 50px;
             padding-bottom: 30px;
         }
         .row a{
@@ -105,4 +110,12 @@
             color: green;
             font-size: 15px;
         }
+        body{
+            background-color: aquamarine;
+        }
     </style>
+</body>
+</html>
+
+
+@endsection

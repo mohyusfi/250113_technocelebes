@@ -9,6 +9,6 @@
         <div>
             <input type="email" name="email" id="email" wire:model='email' class="form-control" placeholder="example@gmail.com">
         </div>
-        <button type="submit" class="btn btn-info">Subsribe</button>
+        <button type="submit" class="btn bg-danger text-light">Subsribe</button>
     </form>
 </div>

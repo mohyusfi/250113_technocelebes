@@ -36,6 +36,11 @@ class HomeController extends Controller
         return view('contents.aboutUs');
     }
 
+    public function legalitas()
+    {
+        return view('contents.legalitas');
+    }
+
     public function article($id)
     {
         $articles = Article::with('tags')->findOrFail($id);
@@ -45,3 +50,4 @@ class HomeController extends Controller
         ]);
     }
 }
+

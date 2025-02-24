@@ -19,9 +19,6 @@
                     <a href="{{ route('about') }}" class="text-white" style="text-decoration:none;">About Us</a>
                 </p>
                 <p>
-                    <a href="{{ route('about') }}" class="text-white" style="text-decoration:none;">Contact Us</a>
-                </p>
-                <p>
                     <a href="" class="text-white" style="text-decoration:none;">Terms & Conditions</a>
                 </p>
                 <p>
@@ -34,7 +31,7 @@
                     <a href="" class="text-white" style="text-decoration:none;">Team</a>
                 </p>
                 <p>
-                    <a href="" class="text-white" style="text-decoration:none;">Legalitas</a>
+                    <a href="{{ route('legalitas') }}" class="text-white" style="text-decoration:none;">Legalitas</a>
                 </p>
                 <p>
                     <a href="" class="text-white" style="text-decoration:none;">Credit & Partner</a>
@@ -57,7 +54,7 @@
                     <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
                     </svg>
                 </a>
-                <a href="https://maps.app.goo.gl/TQLaJZnCjfyvLZFF7" class="text-white" style="text-decoration:none;">
+                <a href="https://maps.app.goo.gl/k9hDynqyit5pnEC87" class="text-white" style="text-decoration:none;">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(203, 197, 255)"  class="bi bi-envelope" viewBox="0 0 16 16">
                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
                     </svg>

@@ -3,18 +3,13 @@
 @section('content')
     <!DOCTYPE html>
     <html lang="id">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
+        <body>
         <style>
             body {
                 background-color: rgb(170, 170, 170);
             }
 
-            .container {
+            .d-article .container {
                 background-color: white;
                 padding: 50px;
                 margin-top: -48px;
@@ -65,7 +60,7 @@
                 font-size: 20px;
             }
 
-            input {
+            .d-article input {
                 margin-top: 20px;
                 border: none;
                 border-radius: 50px;
@@ -78,21 +73,16 @@
 
             }
         </style>
-    </head>
-
-    <body>
-        {{-- @dd($data->tags->all()) --}}
-        <div class="container">
-
-            <h1>{{ $data->title }}</h1>
-            <p>Ditulis oleh Gita Ayu | 6 Januari 2025</p>
-            <img src="{{ asset('storage/' . $data->picture) }}" alt="">
-            <h6>{!! $data->content !!}</h6>
-
-            <div>
+        <div class="d-article">
+            <div class="container">
+                <h1>{{ $data->title }}</h1>
+                <p>Ditulis oleh Gita Ayu | {{ $data->created_at }}</p>
+                <img src="{{ asset('storage/' . $data->picture) }}" alt="">
+                <h6>{!! $data->content !!}</h6>
+                <hr>
                 <h3>Anda menyukai artikel kami? <br> Subscribe situs web kami sekarang!</h3>
                 <div class="card">
-                    @livewire('form-subsribtion')
+                @livewire('form-subsribtion')
                 </div>
             </div>
         </div>
