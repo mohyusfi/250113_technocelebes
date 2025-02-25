@@ -3,33 +3,29 @@
 @section('content')
     <!DOCTYPE html>
     <html lang="id">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
+        <body>
         <style>
             body {
                 background-color: rgb(170, 170, 170);
             }
 
-            .container {
+            .d-article .container {
                 background-color: white;
-                padding: 30px;
+                padding: 50px;
+                margin-top: -48px;
             }
 
-            h1 {
+            .d-article h1 {
                 text-align: center;
             }
 
-            p {
+            .d-article p {
                 text-align: center;
                 font-size: 12px;
                 color: gray;
             }
 
-            img {
+            .d-article img {
                 display: flex;
                 min-height: 300px;
                 max-height: 500px;
@@ -38,7 +34,7 @@
                 justify-self: center;
             }
 
-            h6 {
+            .d-article h6 {
                 margin-left: 30px;
                 margin-right: 30px;
                 padding-bottom: 50px;
@@ -46,7 +42,6 @@
 
             .card {
                 padding: 20px;
-                margin-left: 40px;
                 color: black;
                 width: 300px;
                 align-items: center;
@@ -56,9 +51,8 @@
                 border: none;
             }
 
-            h3 {
+            .d-article h3 {
                 padding-bottom: 20px;
-                padding-left: 30px;
             }
 
             label {
@@ -66,34 +60,29 @@
                 font-size: 20px;
             }
 
-            input {
+            .d-article input {
                 margin-top: 20px;
                 border: none;
                 border-radius: 50px;
                 padding: 8px 15px;
             }
 
-            button {
+            .d-article button {
                 margin-top: 20px;
                 width: 200px;
 
             }
         </style>
-    </head>
-
-    <body>
-        {{-- @dd($data->tags->all()) --}}
-        <div class="container">
-
-            <h1>{{ $data->title }}</h1>
-            <p>Ditulis oleh Gita Ayu | 6 Januari 2025</p>
-            <img src="{{ asset('storage/' . $data->picture) }}" alt="">
-            <h6>{!! $data->content !!}</h6>
-
-            <div>
+        <div class="d-article">
+            <div class="container">
+                <h1>{{ $data->title }}</h1>
+                <p>Ditulis oleh Gita Ayu | {{ $data->created_at }}</p>
+                <img src="{{ asset('storage/' . $data->picture) }}" alt="">
+                <h6>{!! $data->content !!}</h6>
+                <hr>
                 <h3>Anda menyukai artikel kami? <br> Subscribe situs web kami sekarang!</h3>
                 <div class="card">
-                    @livewire('form-subsribtion')
+                @livewire('form-subsribtion')
                 </div>
             </div>
         </div>

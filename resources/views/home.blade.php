@@ -108,70 +108,63 @@
         }
 
 
-        .tittle {
-            text-align: center;
-            font-size: 4vmin;
-            color: #6666FF
-        }
-
-        .container .row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            /* background : cyan; */
-            width: 100%;
-        }
-
-        .container .row .col {
-            width: 80%;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        /* css2 */
-        .container {
-            width: 100%;
-            height: 100%;
-            min-height: 100vh;
-            padding-bottom: 50px;
-            /* Hapus padding agar background benar-benar penuh */
-            background-size: cover;
-            background-position: center;
+    .tittle{
+        text-align: center;
+        font-size : 4vmin;
+        color: #6666FF
+    }
+    .home .container .row{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        /* background : cyan; */
+        width: 100%;
+    }
+    .home .container .row .col {
+        width :80%;
+        align-items:center;
+        flex-direction: column;
+    }
+    
+/* css2 */
+    .home .container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    padding-bottom: 50px ; /* Hapus padding agar background benar-benar penuh */
+    background-size: cover;
+    background-position: center;
 
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
-        .container h1 {
-            position: relative;
-            text-transform: uppercase;
-            text-align: center;
-            padding-top: 10%;
-            color: rgb(14, 47, 66);
-            margin-bottom: 60px;
-        }
-
-        .container h1 ::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 5px;
-        }
-
-        .container .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            /* Posisikan elemen ke tengah */
-            align-items: center;
-            gap: 20px;
-            /* Beri jarak antar elemen */
-            /* background:#34495e; */
-
-        }
+    .container h1{
+        position: relative;
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 10%;
+        color: rgb(14, 47, 66);
+        margin-bottom: 60px;
+    }
+    .container h1 ::after{
+        content: '';
+        position:absolute;
+        bottom:-5px;
+        transform: translateX(-50%);
+        width:100px ;
+        height: 5px;
+    }
+    .home .container .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Posisikan elemen ke tengah */
+    align-items: center;
+    gap: 20px; /* Beri jarak antar elemen */
+    /* background:#34495e; */
+    
+}
 
         .container .row .services {
             background-color: rgb(0, 71, 151);
@@ -190,15 +183,12 @@
             transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .container .row .services:hover {
-            transform: translateY(-10px);
-            /* Elemen akan naik ke atas */
-            color: black;
-            background-color: rgb(255, 255, 255);
-            /* Warna berubah */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            /* Efek bayangan */
-        }
+ .container .row .services:hover {
+    transform: translateY(-10px); /* Elemen akan naik ke atas */
+    color: black;
+    background-color:rgb(255, 255, 255); /* Warna berubah */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+}
 
         .container .row .services i {
             font-size: 40px;
@@ -271,7 +261,7 @@
         }
 
         .carousel .card {
-            margin-top: 20px;
+            margin-top: 40px;
             scroll-snap-align: center;
             padding: 20px;
             border-radius: 30px;
@@ -283,28 +273,27 @@
             flex-direction: column;
             cursor: pointer;
         }
-
         .card img {
-            margin: 20px;
-            width: 350px;
-            height: 300px;
-        }
-
-        .wrapper i {
-            z-index: 1;
-            height: 50px;
-            width: 50px;
-            color: green;
-            background-color: rgba(255, 255, 255, 0.69);
-            text-align: center;
-            line-height: 45px;
-            border-radius: 50%;
-            top: 50%;
-            cursor: pointer;
-            position: absolute;
-            font-size: 1.25rem;
-            transform: translateY(-50%);
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+                width: 300px;
+                height: 235px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+        .wrapper i{
+          z-index: 1;
+          height: 50px;
+          width: 50px;
+          color: green;
+          background-color:rgba(255, 255, 255, 0.69);
+          text-align: center;
+          line-height: 45px;
+          border-radius: 50%;
+          top: 50%;
+          cursor: pointer;
+          position: absolute;
+          font-size: 1.25rem;
+          transform: translateY(-50%);
+          box-shadow: 0 3px 6px rgba(0,0,0,0.23);
         }
 
         .wrapper i:first-child {
@@ -333,6 +322,9 @@
 
         .card h5 {
             padding-bottom: 20px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
 
         /* End style article */
@@ -347,20 +339,18 @@
                 <a href="{{ route('about') }}" class="ctn">About Us</a>
             </div>
         </header>
-
-        <div class="container d-flex flex-column justify-content-center">
-            <div>
-                <h1 class="judul">How We Work To Build App</h1>
-                <div class="line"></div>
-
+    <div class="home">
+    <div class="container">
+        <h1 class="judul">How We Work To Build App</h1>
+        <div class="line"></div>
+      
+        <div class="row">
+            <div class="services">
+                <i class="fa-solid fa-laptop"></i>
+                <h2>Collect requirement</h2>
+                <p>Customer describes thoroughly about the problems they encounter and need to be resolved</p>
             </div>
 
-            <div class="row d-flex justify-content-center w-100">
-                <div class="services">
-                    <i class="fa-solid fa-laptop"></i>
-                    <h2>Collect requirement</h2>
-                    <p>Customer describes thoroughly about the problems they encounter and need to be resolved</p>
-                </div>
                 <div class="services">
                     <i class="fa-solid fa-sliders"></i>
                     <h2>Analyzing</h2>
@@ -390,60 +380,45 @@
                 </div>
             </div>
         </div>
-        <div class="article d-flex gap-4 flex-wrap py-5 justify-content-center">
-            @foreach ($data as $article)
-                <div class="card py-2 mx-4 " style="height: 300px; width: 300px;">
-                    <div class="card-header">
-                        <h6 class="ms-3">
-                            {{ $article->title }}
-                        </h6>
-                    </div>
-                    <div class="card-body p-0 m-0">
-
-                        <img src="{{ asset('storage/' . $article->picture) }}" alt=""
-                            style="max-width: 90%; height: 50%;">
-                        <a class="ms-3" href="{{ route('article', ['id' => $article->id_article]) }}">Baca Selengkapnya →</a>
-                    </div>
-                </div>
-                {{-- <div class="container">
-                    <div class="wrapper">
-                        <i id="left"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
-                            </svg>
-                        </i>
-                        <ul class="carousel">
-                            <li class="card">
-                                <div class="card-body">
-                                    <h1>{{ $article->title }}</h1>
-                                    <img src="{{ asset('storage/' . $article->picture) }}" alt="" draggable="false">
-                                    <h5>{!! $article->content !!}</h5>
-                                    <a href="{{ route('article', ['id' => $article->id_article]) }}">Baca Selengkapnya →</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <i id="right"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
-                            </svg>
-                        </i>
-                    </div>
-                </div> --}}
-            @endforeach
         </div>
-        <div class="email-section d-flex flex-wrap bg-secondary-subtle py-4">
-            <div class="col-md-6 col-12 bg-secondary-subtle py-4 order-1">
+        </div>
+        <div class="article">
+        <div class="container">
+        <div class="wrapper">
+        <i id="left"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+          </svg>
+        </i>
+        <ul class="carousel">
+        @foreach ($data as $article)
+        <li class="card">
+            <div class="card-body">
+            <h1>{{ $article->title }}</h1>
+            <img src="{{ asset('storage/' . $article->picture) }}" alt="" draggable="false">
+            <h5>{!! $article->content !!}</h5>
+            <a href="{{ route('article', ['id' => $article->id_article]) }}">Baca Selengkapnya →</a>    
+        </div>    
+        </li>
+        @endforeach
+        </ul>
+        <i id="right"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+        </i>
+        </div>
+        </div>
+        </div>
+        <div class="email-section d-flex flex-wrap py-4">
+            <div class="col-md-6 col-12 order-1">
                 <iframe class="col-12 rounded-4"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4080.2224113282336!2d119.87413706090078!3d-0.8929821503786283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d8bedc0398bbf61%3A0x6b38cb63e4e092c!2sTechno%20Celebes!5e0!3m2!1sen!2sid!4v1739459383724!5m2!1sen!2sid"
-                    width="600" style="border:0; min-height: 400px;" allowfullscreen="" loading="lazy"
+                    width="600"style="border:0; min-height: 670px;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             @livewire('email-send-customer')
         </div>
 
-        {{-- <script>
+        <script>
             const carousel = document.querySelector(".carousel");
             const arrowBtns = document.querySelectorAll(".wrapper i");
             const firstCardWidth = carousel.querySelector(".card").offsetWidth;
@@ -476,7 +451,7 @@
             carousel.addEventListener("mousedown", dragStart);
             carousel.addEventListener("mousemove", dragging);
             document.addEventListener("mouseup", dragStop);
-        </script> --}}
+        </script>
     </body>
 
     </html>

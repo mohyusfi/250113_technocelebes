@@ -28,15 +28,15 @@
                     </svg>
                 </i>
                 <ul class="carousel">
-                    <li class="card">
-                        <div class="card-body">
-                            <h1>Projek 1</h1>
-                            <img src="" alt="" draggable="false">
-                            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur libero sint
-                                voluptatibus obcaecati tenetur. Et, placeat. Similique molestias consectetur mollitia
-                                dolorem fugit ea esse necessitatibus? Voluptates laborum perferendis iste quis.</h5>
-                        </div>
-                    </li>
+                @foreach ($data as $portofolio)
+                <li class="card">
+                    <div class="card-body">
+                        <h1>{{ $portofolio->title }}</h1>
+                        <img src="{{ asset('storage/' . $portofolio->picture) }}" alt="" draggable="false">
+                        <h5>{!! $portofolio->content !!}</h5>
+                        </div>    
+                </li>
+                @endforeach
                 </ul>
                 <i id="right"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                         class="bi bi-chevron-right" viewBox="0 0 16 16">

@@ -35,6 +35,7 @@ Route::get('/service', 'HomeController@service')->name('service');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/article/{id}', 'HomeController@article')->name('article');
 Route::get('/portofolio', 'HomeController@portofolio')->name('portofolio');
+Route::get('/legalitas', 'HomeController@legalitas')->name('legalitas');
 
 Auth::routes();
 

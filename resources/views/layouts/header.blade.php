@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg shadow mb-5 bg-body">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('home') }}">Cv. Techno Celebes</a>
+            <a class="navbar-brand" href="{{ route('home') }}">
+            <img id="logo" src="{{ asset('img/logo.png') }}" alt="Logo">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -75,8 +76,28 @@
         nav a:hover:before {
             width: 100%;
         }
+        #logo {
+            height: 35px;
+            max-height: 35px;
+            width: auto; /* Menyesuaikan proporsi */
+        }
+
+        /* Ukuran layar kecil */
+        @media only screen and (max-width: 600px) {
+            #logo {
+                content: url('/img/logo.png'); /* Ganti gambar di layar kecil */
+                height: 30px;
+            }
+        }
+
+        /* Ukuran layar besar */
+        @media only screen and (min-width: 601px) {
+            #logo {
+                content: url('/img/logotpg.png'); /* Ganti gambar di layar besar */
+                height: 50px;
+            }
+        }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
