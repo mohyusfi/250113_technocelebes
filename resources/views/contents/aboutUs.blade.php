@@ -39,9 +39,9 @@
                                     <i><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="blue"
                                         class="bi bi-person-fill" viewBox="0 0 16 16">
                                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                        </svg> 
+                                        </svg>
                                     </i>
-                                    <p>Dipimpin oleh seorang profesional di bidang teknologi, bersama tim ahli di bidang software engineering dan UI/UX design. 
+                                    <p>Dipimpin oleh seorang profesional di bidang teknologi, bersama tim ahli di bidang software engineering dan UI/UX design.
                                     </p>
                                 </div>
                                 <div class="col-md-6 abt">
@@ -50,7 +50,7 @@
                                         class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                                         <path
                                             d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-                                        </svg> 
+                                        </svg>
                                     </i>
                                     <p>Berbasis di kota Palu, Sulawesi Tengah
                                     </p>
@@ -67,63 +67,63 @@
         <div class="service">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="block">
+                    <div class="blcok d-flex justify-content-center align-items-center">
                         <div class="service-box">
                             <h3>Pembuatan Perangkat Lunak</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="block">
+                    <div class="d-flex justify-content-center align-items-center">
                         <div class="service-box">
                             <h3>Pemeliharaan dan Pembaharuan Perangkat Keras</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="block">
+                    <div class="block d-flex justify-content-center align-items-center">
                         <div class="service-box">
                             <h3>Pembuatan Web</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="block">
+                    <div class="block d-flex justify-content-center align-items-center">
                         <div class="service-box">
                             <h3>IT Konsultan</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="block">
+                    <div class="block d-flex justify-content-center align-items-center">
                         <div class="service-box">
                             <h3>Design Digital</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="block">
+                    <div class="block d-flex justify-content-center align-items-center">
                         <div class="service-box">
                             <h3>Instalasi Jaringan</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="block">
+                    <div class="block d-flex justify-content-center align-items-centerblock">
                         <div class="service-box">
                             <h3>Pembuat Konten Web</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="block">
+                    <div class="block d-flex justify-content-center align-items-center">
                         <div class="service-box">
                             <h3>Internet of Things</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="block">
+                    <div class="block d-flex justify-content-center align-items-center">
                         <div class="service-box">
                             <h3>Machine Learning</h3>
                         </div>
@@ -133,10 +133,8 @@
         </div>
     </div>
     </div>
-
-
 <style>
-  
+
   @keyframes appear {
     from {
       opacity: 0;
@@ -174,7 +172,7 @@
         font-style: italic;
         padding-left: 15px;
       }
-    
+
     .card{
       border-color:rgb(121, 0, 219);
       animation: fade-up 0.7s;

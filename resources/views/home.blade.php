@@ -52,22 +52,22 @@
         }
 
         /* .navbar {
-                                    position: absolute;
-                                    top: 0;
-                                    right: 0; Memindahkan navbar ke sisi kanan
-                                    padding: 10px;
-                            }
-                                .nav-links{
-                                    display : flex;
-                                    align-items: center;
+                                            position: absolute;
+                                            top: 0;
+                                            right: 0; Memindahkan navbar ke sisi kanan
+                                            padding: 10px;
+                                    }
+                                        .nav-links{
+                                            display : flex;
+                                            align-items: center;
 
-                                }
-                                .nav-links li{
-                                    margin: 0 30px;
-                                }
-                                .navbar li{
-                                    color:#fff;
-                                } */
+                                        }
+                                        .nav-links li{
+                                            margin: 0 30px;
+                                        }
+                                        .navbar li{
+                                            color:#fff;
+                                        } */
 
         header {
             width: 100vw;
@@ -108,63 +108,70 @@
         }
 
 
-    .tittle{
-        text-align: center;
-        font-size : 4vmin;
-        color: #6666FF
-    }
-    .home .container .row{
-        display:flex;
-        align-items: center;
-        justify-content: space-between;
-        /* background : cyan; */
-        width: 100%;
-    }
-    .home .container .row .col {
-        width :80%;
-        align-items:center;
-        flex-direction: column;
-    }
-    
-/* css2 */
-    .home .container {
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    padding-bottom: 50px ; /* Hapus padding agar background benar-benar penuh */
-    background-size: cover;
-    background-position: center;
+        .tittle {
+            text-align: center;
+            font-size: 4vmin;
+            color: #6666FF
+        }
+
+        .home .container .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* background : cyan; */
+            width: 100%;
+        }
+
+        .home .container .row .col {
+            width: 80%;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* css2 */
+        .home .container {
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            padding-bottom: 50px;
+            /* Hapus padding agar background benar-benar penuh */
+            background-size: cover;
+            background-position: center;
 
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
-    .container h1{
-        position: relative;
-        text-transform: uppercase;
-        text-align: center;
-        padding-top: 10%;
-        color: rgb(14, 47, 66);
-        margin-bottom: 60px;
-    }
-    .container h1 ::after{
-        content: '';
-        position:absolute;
-        bottom:-5px;
-        transform: translateX(-50%);
-        width:100px ;
-        height: 5px;
-    }
-    .home .container .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Posisikan elemen ke tengah */
-    align-items: center;
-    gap: 20px; /* Beri jarak antar elemen */
-    /* background:#34495e; */
-    
-}
+        .container h1 {
+            position: relative;
+            text-transform: uppercase;
+            text-align: center;
+            padding-top: 10%;
+            color: rgb(14, 47, 66);
+            margin-bottom: 60px;
+        }
+
+        .container h1 ::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+        }
+
+        .home .container .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* Posisikan elemen ke tengah */
+            align-items: center;
+            gap: 20px;
+            /* Beri jarak antar elemen */
+            /* background:#34495e; */
+
+        }
 
         .container .row .services {
             background-color: rgb(0, 71, 151);
@@ -183,12 +190,15 @@
             transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
- .container .row .services:hover {
-    transform: translateY(-10px); /* Elemen akan naik ke atas */
-    color: black;
-    background-color:rgb(255, 255, 255); /* Warna berubah */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Efek bayangan */
-}
+        .container .row .services:hover {
+            transform: translateY(-10px);
+            /* Elemen akan naik ke atas */
+            color: black;
+            background-color: rgb(255, 255, 255);
+            /* Warna berubah */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            /* Efek bayangan */
+        }
 
         .container .row .services i {
             font-size: 40px;
@@ -224,8 +234,8 @@
             background-position: center;
             background-size: cover;
             /* display: flex;
-                align-items: flex-end;
-                justify-content: center; */
+                        align-items: flex-end;
+                        justify-content: center; */
         }
 
         .wrapper {
@@ -273,27 +283,29 @@
             flex-direction: column;
             cursor: pointer;
         }
+
         .card img {
-                width: 300px;
-                height: 235px;
-                margin-top: 10px;
-                margin-bottom: 10px;
-            }
-        .wrapper i{
-          z-index: 1;
-          height: 50px;
-          width: 50px;
-          color: green;
-          background-color:rgba(255, 255, 255, 0.69);
-          text-align: center;
-          line-height: 45px;
-          border-radius: 50%;
-          top: 50%;
-          cursor: pointer;
-          position: absolute;
-          font-size: 1.25rem;
-          transform: translateY(-50%);
-          box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+            width: 300px;
+            height: 235px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .wrapper i {
+            z-index: 1;
+            height: 50px;
+            width: 50px;
+            color: green;
+            background-color: rgba(255, 255, 255, 0.69);
+            text-align: center;
+            line-height: 45px;
+            border-radius: 50%;
+            top: 50%;
+            cursor: pointer;
+            position: absolute;
+            font-size: 1.25rem;
+            transform: translateY(-50%);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
         }
 
         .wrapper i:first-child {
@@ -339,74 +351,81 @@
                 <a href="{{ route('about') }}" class="ctn">About Us</a>
             </div>
         </header>
-    <div class="home">
-    <div class="container">
-        <h1 class="judul">How We Work To Build App</h1>
-        <div class="line"></div>
-      
-        <div class="row">
-            <div class="services">
-                <i class="fa-solid fa-laptop"></i>
-                <h2>Collect requirement</h2>
-                <p>Customer describes thoroughly about the problems they encounter and need to be resolved</p>
-            </div>
+        <div class="home">
+            <div class="container d-flex">
+                <div>
+                    <h1 class="judul">How We Work To Build App</h1>
+                    <div class="line"></div>
+                </div>
 
-                <div class="services">
-                    <i class="fa-solid fa-sliders"></i>
-                    <h2>Analyzing</h2>
-                    <p>We’re giving out our best solutions to unravel given problems</p>
-                </div>
-                <div class="services">
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Agreement</h2>
-                    <p>After being presented with several solutions, the customer then locks on which options they feel the
-                        most appropriate</p>
-                </div>
-                <div class="services">
-                    <i class="fa-solid fa-tags"></i>
-                    <h2>Build</h2>
-                    <p>After being agreed on, we’ll work on the chosen option with haste</p>
-                </div>
-                <div class="services">
-                    <i class="fa-solid fa-link"></i>
-                    <h2>Testing and Review</h2>
-                    <p>The result would then be tested with both Techno Celebes representative and Customer being present
-                    </p>
-                </div>
-                <div class="services">
-                    <i class="fa-solid fa-pen-to-square"></i>
-                    <h2>Deployment</h2>
-                    <p>Lauching will be underway only if the results are satisfactory</p>
+                <div class="row align-items-center">
+                    <div class="services">
+                        <i class="fa-solid fa-laptop"></i>
+                        <h2>Collect requirement</h2>
+                        <p>Customer describes thoroughly about the problems they encounter and need to be resolved</p>
+                    </div>
+                    <div class="services">
+                        <i class="fa-solid fa-sliders"></i>
+                        <h2>Analyzing</h2>
+                        <p>We’re giving out our best solutions to unravel given problems</p>
+                    </div>
+                    <div class="services">
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Agreement</h2>
+                        <p>After being presented with several solutions, the customer then locks on which options they feel
+                            the
+                            most appropriate</p>
+                    </div>
+                    <div class="services">
+                        <i class="fa-solid fa-tags"></i>
+                        <h2>Build</h2>
+                        <p>After being agreed on, we’ll work on the chosen option with haste</p>
+                    </div>
+                    <div class="services">
+                        <i class="fa-solid fa-link"></i>
+                        <h2>Testing and Review</h2>
+                        <p>The result would then be tested with both Techno Celebes representative and Customer being
+                            present
+                        </p>
+                    </div>
+                    <div class="services">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <h2>Deployment</h2>
+                        <p>Lauching will be underway only if the results are satisfactory</p>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
         </div>
         <div class="article">
-        <div class="container">
-        <div class="wrapper">
-        <i id="left"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
-          </svg>
-        </i>
-        <ul class="carousel">
-        @foreach ($data as $article)
-        <li class="card">
-            <div class="card-body">
-            <h1>{{ $article->title }}</h1>
-            <img src="{{ asset('storage/' . $article->picture) }}" alt="" draggable="false">
-            <h5>{!! $article->content !!}</h5>
-            <a href="{{ route('article', ['id' => $article->id_article]) }}">Baca Selengkapnya →</a>    
-        </div>    
-        </li>
-        @endforeach
-        </ul>
-        <i id="right"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
-            </svg>
-        </i>
-        </div>
-        </div>
+            <div class="container">
+                <div class="wrapper">
+                    <i id="left"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                            fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                        </svg>
+                    </i>
+                    <ul class="carousel">
+                        @foreach ($data as $article)
+                            <li class="card">
+                                <div class="card-body">
+                                    <h1>{{ $article->title }}</h1>
+                                    <img src="{{ asset('storage/' . $article->picture) }}" alt="" draggable="false">
+                                    <h5>{!! $article->content !!}</h5>
+                                    <a href="{{ route('article', ['id' => $article->id_article]) }}">Baca Selengkapnya →</a>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <i id="right"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </i>
+                </div>
+            </div>
         </div>
         <div class="email-section d-flex flex-wrap py-4">
             <div class="col-md-6 col-12 order-1">
